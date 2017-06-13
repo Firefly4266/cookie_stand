@@ -1,3 +1,20 @@
 .sales {
-  background-color: blue;
+ display: flex;
+ flex-flow: column;
+}
+
+.coming {
+  padding: 1em;
+  margin: auto;
+}
+
+.fish_sales {
+  padding: 1em;
+  margin: auto;
+  /*justify-content: space-around;*/
+}
+
+.sites {
+  padding: 1em;
+  margin: auto;
 }
