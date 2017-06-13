@@ -60,6 +60,16 @@ padding-bottom: 2em;
 }
 
 .sites {
-  padding: 1em;
+  padding: .5em;
   margin: auto;
+  display: flex;
+}
+
+.location {
+  /*padding: 1em;*/
+  /*flex: 1;*/
+  justify-content: space-between;
+  /*flex-wrap: nowrap;*/
+  /*margin: auto;*/
+
 }
