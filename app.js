@@ -4,18 +4,39 @@ let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 
 // displays individual store data for my Salmon Cookie Shops
 
-var firstAndPike = {
-  name: '1st and Pike',
-  minCustomers: 23,
-  maxCustomers: 65,
-  avgCookies: 6.3,
-  sumCookies: [],
-  cookies: function() { 
-    var amount = Math.round(Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers)) + this.minCustomers) * this.avgCookies);
-    this.sumCookies.push(amount);
-    return amount;
-  }
-};
+var Location = function(name, minCustomers, maxCustomers, avgCookies, sumCookies) {
+  this.name = name,
+  this.minCustomers = minCustomers,
+  this.maxCustomers = maxCustomers,
+  this.avgCookies = avgCookies,
+  this.sumCookies = sumCookies
+}
+
+Location.prototype.cookies = function() { 
+  var amount = Math.round(Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers)) + this.minCustomers) * this.avgCookies);
+  this.sumCookies.push(amount);
+  return amount;
+}
+
+
+var firstAndPike = new Location('1st and Pike', 23,65,6.3, []);
+console.log(firstAndPike);
+
+
+
+
+// var firstAndPike = {
+//   name: '1st and Pike',
+//   minCustomers: 23,
+//   maxCustomers: 65,
+//   avgCookies: 6.3,
+//   sumCookies: [],
+//   cookies: function() { 
+//     var amount = Math.round(Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers)) + this.minCustomers) * this.avgCookies);
+//     this.sumCookies.push(amount);
+//     return amount;
+//   }
+// };
 
 //use object-oriented programming to build this site, so that the site will be more effective and the code will be easier to read and understand  
 
