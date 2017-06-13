@@ -63,13 +63,18 @@ padding-bottom: 2em;
   padding: .5em;
   margin: auto;
   display: flex;
+  border: 3px solid black;
 }
 
 .location {
-  /*padding: 1em;*/
+  padding: 2em;
   /*flex: 1;*/
   justify-content: space-between;
   /*flex-wrap: nowrap;*/
-  /*margin: auto;*/
+  margin: auto;
 
+}
+
+li { 
+  list-style: none;
 }

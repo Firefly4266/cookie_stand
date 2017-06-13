@@ -26,7 +26,7 @@ console.log(injection);
 for (var i = 0; i < hours.length; i++) { // represent the store data in a list format on the sales page
   var listElement = document.createElement('li');
   listElement.setAttribute('class', 'hours');
-  listElement.textContent = hours[i] + ': ' + firstAndPike.cookies() + ' cookies sold';
+  listElement.textContent = hours[i] + ': ' + firstAndPike.cookies() + ' cookies';
   injection.appendChild(listElement);
 }
 
@@ -58,7 +58,7 @@ console.log(injection);
 for (var i = 0; i < hours.length; i++) { // represent the store data in a list format on the sales page
   var listElement = document.createElement('li');
   listElement.setAttribute('class', 'hours');
-  listElement.textContent = hours[i] + ': ' + seaTacAirport.cookies() + ' cookies sold';
+  listElement.textContent = hours[i] + ': ' + seaTacAirport.cookies() + ' cookies';
   injection.appendChild(listElement);
 }
 
@@ -89,7 +89,7 @@ console.log(injection);
 for (var i = 0; i < hours.length; i++) { // represent the store data in a list format on the sales page
   var listElement = document.createElement('li');
   listElement.setAttribute('class', 'hours');
-  listElement.textContent = hours[i] + ': ' + seattleCenter.cookies() + ' cookies sold';
+  listElement.textContent = hours[i] + ': ' + seattleCenter.cookies() + ' cookies';
   injection.appendChild(listElement);
 }
 
@@ -120,7 +120,7 @@ console.log(injection);
 for (var i = 0; i < hours.length; i++) { // represent the store data in a list format on the sales page
   var listElement = document.createElement('li');
   listElement.setAttribute('class', 'hours');
-  listElement.textContent = hours[i] + ': ' + capitolHill.cookies() + ' cookies sold';
+  listElement.textContent = hours[i] + ': ' + capitolHill.cookies() + ' cookies';
   injection.appendChild(listElement);
 }
 
@@ -151,7 +151,7 @@ console.log(injection);
 for (var i = 0; i < hours.length; i++) { // represent the store data in a list format on the sales page
   var listElement = document.createElement('li');
   listElement.setAttribute('class', 'hours');
-  listElement.textContent = hours[i] + ': ' + alkiBeach.cookies() + ' cookies sold';
+  listElement.textContent = hours[i] + ': ' + alkiBeach.cookies() + ' cookies';
   injection.appendChild(listElement);
 }
 
