@@ -19,7 +19,9 @@ var firstAndPike = {
 
 //use object-oriented programming to build this site, so that the site will be more effective and the code will be easier to read and understand  
 
-let injection = document.getElementById('firstAndPike');
+var injection = document.getElementById('firstAndPike');
+console.log(injection);
+
 
 for (var i = 0; i < hours.length; i++) { // represent the store data in a list format on the sales page
   var listElement = document.createElement('li');
