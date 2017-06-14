@@ -15,7 +15,7 @@ function Location(name, minCustomers, maxCustomers, avgCookies, totalCookies) {
 
 Location.prototype.cookies = function() { 
   for(var i = 0; i < hours.length; i++) {
-    var amount = Math.round(Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers)) + this.minCustomers) * this.avgCookies);
+    var amount = Math.round(Math.ceil(Math.random() * ((this.maxCustomers - this.minCustomers)) + this.minCustomers) * this.avgCookies);
     this.cookieArray.push(amount);
   }
   console.log(amount);
@@ -54,19 +54,19 @@ function injectTotals() {
 
   var second_row = document.createElement('tr');
   var mt_field = document.getElementById('th');
-  mt_field.textContent = Totals;
-  second_row.appendChild(mt_field);
+  // mt_field.textContent = 'Totals';
+  // second_row.appendChild(mt_field);
 
   for (var i = 0; i < table_hours.length; i++) {
    var total = 0;
-   for(j = 0; j < locationsArray; j++) {
+   for(var j = 0; j < locationsArray; j++) {
     total += locationsArray[j].cookieArray[i]
    }
    var totals_field = document.createElement('td');
    totals_field.textContent = total;
    second_row.appendChild(totals_field);
   };
-   cookie_table.appendChild(second_row);
+  //  cookie_table.appendChild(second_row);
 };
 
 Location.prototype.injection = function() {
@@ -83,6 +83,28 @@ Location.prototype.injection = function() {
   }
   cookie_table.appendChild(cookie_row);
 };
+
+var formEl = document.getElementById('cookie-form');
+
+formEl.addEventListener('submit', function(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  var new_spot = event.target.name.value;
+  var min = event.target.min.value;
+  var max = event.target.max.value;
+  var average = event.target.avgCookies.value;
+
+  var newSpot = new Location(new_spot, min, max, average);
+  console.log(newSpot);
+  newSpot.cookies();
+  newSpot.totals();
+  newSpot.injection();
+  locationsArray.push(newSpot);
+
+  injectTotals();
+
+});
+
 
 injectHours();
 
