@@ -84,17 +84,10 @@ Location.prototype.injection = function() {
   cookie_table.appendChild(cookie_row);
 };
 
-// function callAll(Location) {
-//   console.log(this.Location);
-// }
-
 injectHours();
 
 var firstAndPike = new Location('1st and Pike', 23,65,6.3);
 console.log(firstAndPike);
-// callAll(firstAndPike);
-// console.log(callAll(firstAndPike));
-
 firstAndPike.cookies();
 firstAndPike.totals();
 firstAndPike.injection();
