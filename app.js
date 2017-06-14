@@ -2,7 +2,7 @@
 
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-// displays individual store data for my Salmon Cookie Shops
+var locationsArray = [];
 
 function Location(name, minCustomers, maxCustomers, avgCookies, totalCookies) {
   this.name = name,
@@ -38,43 +38,77 @@ console.log(firstAndPike);
 
 //use object-oriented programming to build this site, so that the site will be more effective and the code will be easier to read and understand  
 
-function injection() {
-  document.getElementById('firstAndPike');
-  console.log(injection);
+let table_hours = [ ' ', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-  for (var i = 0; i < hours.length; i++) { // represent the store data in a list format on the sales page
-    var listElement = document.createElement('li');
-    listElement.setAttribute('class', 'hours');
-    listElement.textContent = hours[i] + ': ' + firstAndPike.cookies() + ' cookies sold';
-    injection.appendChild(listElement);
+function injectHours(){
+  var cookieTable = document.getElementById('cookie_table');
+  var firstRow = document.createElement('tr');
+
+  for (var i = 0; i < hours.length; i++) {
+    var hourField = document.createElement('th');
+    hourField.textContent = table_hours[i];
+    firstRow.appendChild(hourField);
   }
+  cookieTable.appendChild(firstRow);
+};
 
-  var total = 0;
-  for (var i = 0; i < firstAndPike.sumCookies.length; i++) {
-    total += firstAndPike.sumCookies[i];
+function injectTotals() {
+  var cookie_table = document.getElementById(cookie_table);
+
+  var second_row = document.createElement('tr');
+  var mt_field = document.getElementById('th');
+  mt_field.textContent = Totals;
+  second_row.appendChild(mt_field);
+
+  for (var i = 0; i < table_hours.length; i++) {
+   var total = 0;
+   for(j = 0; j < locationsArray; j++) {
+    total += locationsArray[j].cookieArray[i]
+   }
+   var totals_field = document.createElement('td');
+   totals_field.textContent = total;
+   second_row.appendChild(totals_field);
   };
+   cookie_table.appendChild(second_row);
+};
 
-} 
+Location.prototype.injection = function() {
+  var cookie_table = document.getElementById(cookie_table);
+  var cookie_row = document.createElement('tr');
+  var header_row = document.getElementById('th');
+  header_row.textContent = this.name;
+  cookie_row.appendChild(header_row);
 
-let seaTacAirport = new Location('seaTacAirport',3,24,1.2,[]);
-console.log(seaTacAirport);
-injection = document.getElementById('seaTacAirport');
-console.log(injection);
+  for(var i = 0; i < this.cookieArray.length; i++){
+    var table_field = document.createElement('td');
+    table_field.textContent = this.cookieArray[i];
+    cookie_row.appendChild(table_field);
+  }
+  cookie_table.appendChild(cookie_row);
+};
+
+injectHours();
+
+
+// let seaTacAirport = new Location('seaTacAirport',3,24,1.2,[]);
+// console.log(seaTacAirport);
+// injection = document.getElementById('seaTacAirport');
+// console.log(injection);
   
-let seattleCenter = new Location('seattleCenter',11,38,3.7,[]);
-console.log(seattleCenter);
-injection = document.getElementById('seattleCenter');
-console.log(injection);
+// let seattleCenter = new Location('seattleCenter',11,38,3.7,[]);
+// console.log(seattleCenter);
+// injection = document.getElementById('seattleCenter');
+// console.log(injection);
 
-let capitolHill = new Location('capitolHill',20,38,2.3,[]);
-console.log(capitolHill);
-injection = document.getElementById('capitolHill');
-console.log(injection);
+// let capitolHill = new Location('capitolHill',20,38,2.3,[]);
+// console.log(capitolHill);
+// injection = document.getElementById('capitolHill');
+// console.log(injection);
 
-let alkiBeach = new Location('alkiBeach',2,16,4.6,[]);
-console.log(alkiBeach);
-injection = document.getElementById('alkiBeach');
-console.log(injection);
+// let alkiBeach = new Location('alkiBeach',2,16,4.6,[]);
+// console.log(alkiBeach);
+// injection = document.getElementById('alkiBeach');
+// console.log(injection);
 
 
 
