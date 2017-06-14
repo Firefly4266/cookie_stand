@@ -33,13 +33,13 @@ Location.prototype.totals = function(){
 
 //use object-oriented programming to build this site, so that the site will be more effective and the code will be easier to read and understand  
 
-var table_hours = [ ' ', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var table_hours = [ ' ', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Totals'];
 
 function injectHours(){
   var cookieTable = document.getElementById('cookie_table');
   var firstRow = document.createElement('tr');
 
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < table_hours.length; i++) {
     var hourField = document.createElement('th');
     hourField.textContent = table_hours[i];
     firstRow.appendChild(hourField);
