@@ -19,69 +19,49 @@ Location.prototype.cookies = function() {
 }
 
 
-var firstAndPike = new Location('1st and Pike', 23,65,6.3, []);
+let firstAndPike = new Location('1st and Pike', 23,65,6.3, []);
 console.log(firstAndPike);
 
 
-
-
-// var firstAndPike = {
-//   name: '1st and Pike',
-//   minCustomers: 23,
-//   maxCustomers: 65,
-//   avgCookies: 6.3,
-//   sumCookies: [],
-//   cookies: function() { 
-//     var amount = Math.round(Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers)) + this.minCustomers) * this.avgCookies);
-//     this.sumCookies.push(amount);
-//     return amount;
-//   }
-// };
-
 //use object-oriented programming to build this site, so that the site will be more effective and the code will be easier to read and understand  
 
-var injection = document.getElementById('firstAndPike');
+function injection() {
+  document.getElementById('firstAndPike');
+  console.log(injection);
+
+  for (var i = 0; i < hours.length; i++) { // represent the store data in a list format on the sales page
+    var listElement = document.createElement('li');
+    listElement.setAttribute('class', 'hours');
+    listElement.textContent = hours[i] + ': ' + firstAndPike.cookies() + ' cookies sold';
+    injection.appendChild(listElement);
+  }
+
+  var total = 0;
+  for (var i = 0; i < firstAndPike.sumCookies.length; i++) {
+    total += firstAndPike.sumCookies[i];
+  };
+
+} 
+
+let seaTacAirport = new Location('seaTacAirport',3,24,1.2,[]);
+console.log(seaTacAirport);
+injection = document.getElementById('seaTacAirport');
+console.log(injection);
+  
+let seattleCenter = new Location('seattleCenter',11,38,3.7,[]);
+console.log(seattleCenter);
+injection = document.getElementById('seattleCenter');
 console.log(injection);
 
+let capitolHill = new Location('capitolHill',20,38,2.3,[]);
+console.log(capitolHill);
+injection = document.getElementById('capitolHill');
+console.log(injection);
 
-for (var i = 0; i < hours.length; i++) { // represent the store data in a list format on the sales page
-  var listElement = document.createElement('li');
-  listElement.setAttribute('class', 'hours');
-  listElement.textContent = hours[i] + ': ' + firstAndPike.cookies() + ' cookies sold';
-  injection.appendChild(listElement);
-}
+let alkiBeach = new Location('alkiBeach',2,16,4.6,[]);
+console.log(alkiBeach);
+injection = document.getElementById('alkiBeach');
+console.log(injection);
 
-var total = 0;
-for (var i = 0; i < firstAndPike.sumCookies.length; i++) {
-  total += firstAndPike.sumCookies[i];
-};
-
-console.log(firstAndPike.sumCookies);
-console.log(total);
-
-
-let seaTacAirport = {
-  minCustomers: 3,
-  maxCustomers: 24,
-  avgCookies: 1.2
-};
-
-let seattleCenter = {
-  minCustomers: 11,
-  maxCustomers: 38,
-  avgCookies: 3.7
-};
-
-let capitolHill = {
-  minCustomers: 20,
-  maxCustomers: 38,
-  avgCookies: 2.3
-};
-
-let alkiBeach = {
-  minCustomers: 2,
-  maxCustomers: 16,
-  avgCookies: 4.6
-};
 
 
