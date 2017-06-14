@@ -4,19 +4,32 @@ let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 
 // displays individual store data for my Salmon Cookie Shops
 
-var Location = function(name, minCustomers, maxCustomers, avgCookies, sumCookies) {
+function Location(name, minCustomers, maxCustomers, avgCookies, totalCookies) {
   this.name = name,
   this.minCustomers = minCustomers,
   this.maxCustomers = maxCustomers,
   this.avgCookies = avgCookies,
-  this.sumCookies = sumCookies
-}
+  this.totalCookies = 0,
+  this.cookieArray = []
+};
 
 Location.prototype.cookies = function() { 
-  var amount = Math.round(Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers)) + this.minCustomers) * this.avgCookies);
-  this.sumCookies.push(amount);
-  return amount;
-}
+  for(var i = 0; i < hours.length; i++) {
+    var amount = Math.round(Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers)) + this.minCustomers) * this.avgCookies);
+    this.cookieArray.push(amount);
+  }
+    return amount;
+};
+
+Location.prototype.totals = function(){
+  var total = 0;
+  for (var i = 0; i < hours.length; i++) {
+    total += this.cookieArray[i];
+  }
+    this.cookieArray.push(total);
+    this.totalCookies = total;
+    return total;
+};
 
 
 let firstAndPike = new Location('1st and Pike', 23,65,6.3, []);
