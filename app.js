@@ -1,6 +1,6 @@
 'use strict';
 
-let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 var locationsArray = [];
 
@@ -31,14 +31,9 @@ Location.prototype.totals = function(){
     return total;
 };
 
-
-let firstAndPike = new Location('1st and Pike', 23,65,6.3, []);
-console.log(firstAndPike);
-
-
 //use object-oriented programming to build this site, so that the site will be more effective and the code will be easier to read and understand  
 
-let table_hours = [ ' ', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var table_hours = [ ' ', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 function injectHours(){
   var cookieTable = document.getElementById('cookie_table');
@@ -73,9 +68,9 @@ function injectTotals() {
 };
 
 Location.prototype.injection = function() {
-  var cookie_table = document.getElementById(cookie_table);
+  var cookie_table = document.getElementById('cookie_table');
   var cookie_row = document.createElement('tr');
-  var header_row = document.getElementById('th');
+  var header_row = document.createElement('th');
   header_row.textContent = this.name;
   cookie_row.appendChild(header_row);
 
@@ -89,26 +84,40 @@ Location.prototype.injection = function() {
 
 injectHours();
 
+var firstAndPike = new Location('1st and Pike', 23,65,6.3);
+console.log(firstAndPike);
+firstAndPike.cookies();
+firstAndPike.totals();
+firstAndPike.injection();
+locationsArray.push(firstAndPike);
 
-// let seaTacAirport = new Location('seaTacAirport',3,24,1.2,[]);
-// console.log(seaTacAirport);
-// injection = document.getElementById('seaTacAirport');
-// console.log(injection);
+var seaTacAirport = new Location('seaTacAirport',3,24,1.2,[]);
+console.log(seaTacAirport);
+seaTacAirport.cookies();
+seaTacAirport.totals();
+seaTacAirport.injection();
+locationsArray.push(seaTacAirport);
   
-// let seattleCenter = new Location('seattleCenter',11,38,3.7,[]);
-// console.log(seattleCenter);
-// injection = document.getElementById('seattleCenter');
-// console.log(injection);
+var seattleCenter = new Location('seattleCenter',11,38,3.7,[]);
+console.log(seattleCenter);
+seattleCenter.cookies();
+seattleCenter.totals();
+seattleCenter.injection();
+locationsArray.push(seattleCenter);
 
-// let capitolHill = new Location('capitolHill',20,38,2.3,[]);
-// console.log(capitolHill);
-// injection = document.getElementById('capitolHill');
-// console.log(injection);
+var capitolHill = new Location('capitolHill',20,38,2.3,[]);
+console.log(capitolHill);
+capitolHill.cookies();
+capitolHill.totals();
+capitolHill.injection();
+locationsArray.push(capitolHill);
 
-// let alkiBeach = new Location('alkiBeach',2,16,4.6,[]);
-// console.log(alkiBeach);
-// injection = document.getElementById('alkiBeach');
-// console.log(injection);
+var alkiBeach = new Location('alkiBeach',2,16,4.6,[]);
+console.log(alkiBeach);
+alkiBeach.cookies();
+alkiBeach.totals();
+alkiBeach.injection();
+locationsArray.push(alkiBeach);
 
 
 
