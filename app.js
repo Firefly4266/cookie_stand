@@ -18,7 +18,8 @@ Location.prototype.cookies = function() {
     var amount = Math.round(Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers)) + this.minCustomers) * this.avgCookies);
     this.cookieArray.push(amount);
   }
-    return amount;
+  console.log(amount);
+  return amount;
 };
 
 Location.prototype.totals = function(){
@@ -28,7 +29,8 @@ Location.prototype.totals = function(){
   }
     this.cookieArray.push(total);
     this.totalCookies = total;
-    return total;
+    console.log(total);
+    return total;  
 };
 
 //use object-oriented programming to build this site, so that the site will be more effective and the code will be easier to read and understand  
@@ -82,10 +84,17 @@ Location.prototype.injection = function() {
   cookie_table.appendChild(cookie_row);
 };
 
+// function callAll(Location) {
+//   console.log(this.Location);
+// }
+
 injectHours();
 
 var firstAndPike = new Location('1st and Pike', 23,65,6.3);
 console.log(firstAndPike);
+// callAll(firstAndPike);
+// console.log(callAll(firstAndPike));
+
 firstAndPike.cookies();
 firstAndPike.totals();
 firstAndPike.injection();

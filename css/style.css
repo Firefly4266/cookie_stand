@@ -13,9 +13,9 @@ body {
 }
 
 .sales {
- display: flex;
- flex-flow: column;
- background-color: cadetblue;
+  display: flex;
+  flex-flow: column;
+  background-color: cadetblue;
 }
 
 .head {
@@ -34,8 +34,7 @@ body {
 
 ul {
   margin: auto;
-padding-bottom: 2em;
-
+  padding-bottom: 2em;
 }
 
 .banner {
@@ -62,4 +61,9 @@ padding-bottom: 2em;
 .sites {
   padding: 1em;
   margin: auto;
+}
+
+#cookie_table, th, tr, td {
+  border: 2px solid black;
+  padding: 5px;
 }
