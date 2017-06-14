@@ -1,3 +1,75 @@
+body {
+  display: flex;
+  justify-content: space-around;
+}
+
+.wrapper {
+  background-color: yellowgreen;
+  width: 95%;
+}
+
+.home {
+  padding: 2em;
+}
+
 .sales {
-  background-color: blue;
+  display: flex;
+  flex-flow: column;
+  background-color: cadetblue;
+}
+
+.head {
+  display: flex;
+  flex-flow: column;
+}
+
+.info {
+  display: flex;
+  flex-flow: column;
+}
+
+.blurb {
+  text-align: center;
+}
+
+ul {
+  margin: auto;
+  padding-bottom: 2em;
+
+}
+
+.banner {
+  display: flex;
+  padding: 1em;
+  margin: auto;
+}
+
+.home {
+  padding: 2em;
+  margin: auto;
+}
+
+.sales_banner {
+  padding: 1em;
+  margin: auto;
+}
+
+.fish_sales {
+  padding: 1em;
+  margin: auto;
+}
+
+.sites {
+  padding: 1em;
+  margin: auto;
+  display: flex;
+}
+
+td, tr, th, #cookie_table {
+  border: 2px solid black;
+  padding: 5px;
+}
+
+.link {
+  padding: 5px;
 }
