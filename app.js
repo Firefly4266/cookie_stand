@@ -51,9 +51,7 @@ function injectHours(){
 
 function injectTotals() {
   var cookie_table = document.getElementById(cookie_table);
-
   var second_row = document.createElement('tr');
-
   for (var i = 0; i < table_hours.length; i++) {
    var total = 0;
    for(var j = 0; j < locationsArray; j++) {
@@ -89,18 +87,14 @@ formEl.addEventListener('submit', function(event) {
   var min = event.target.min.value;
   var max = event.target.max.value;
   var average = event.target.avgCookies.value;
-
   var newSpot = new Location(new_spot, min, max, average);
   console.log(newSpot);
   newSpot.cookies();
   newSpot.totals();
   newSpot.injection();
   locationsArray.push(newSpot);
-
   injectTotals();
-
 });
-
 
 injectHours();
 
@@ -111,28 +105,28 @@ firstAndPike.totals();
 firstAndPike.injection();
 locationsArray.push(firstAndPike);
 
-var seaTacAirport = new Location('seaTacAirport',3,24,1.2,[]);
+var seaTacAirport = new Location('seaTacAirport',3,24,1.2);
 console.log(seaTacAirport);
 seaTacAirport.cookies();
 seaTacAirport.totals();
 seaTacAirport.injection();
 locationsArray.push(seaTacAirport);
   
-var seattleCenter = new Location('seattleCenter',11,38,3.7,[]);
+var seattleCenter = new Location('seattleCenter',11,38,3.7);
 console.log(seattleCenter);
 seattleCenter.cookies();
 seattleCenter.totals();
 seattleCenter.injection();
 locationsArray.push(seattleCenter);
 
-var capitolHill = new Location('capitolHill',20,38,2.3,[]);
+var capitolHill = new Location('capitolHill',20,38,2.3);
 console.log(capitolHill);
 capitolHill.cookies();
 capitolHill.totals();
 capitolHill.injection();
 locationsArray.push(capitolHill);
 
-var alkiBeach = new Location('alkiBeach',2,16,4.6,[]);
+var alkiBeach = new Location('alkiBeach',2,16,4.6);
 console.log(alkiBeach);
 alkiBeach.cookies();
 alkiBeach.totals();
