@@ -53,9 +53,6 @@ function injectTotals() {
   var cookie_table = document.getElementById(cookie_table);
 
   var second_row = document.createElement('tr');
-  var mt_field = document.getElementById('th');
-  // mt_field.textContent = 'Totals';
-  // second_row.appendChild(mt_field);
 
   for (var i = 0; i < table_hours.length; i++) {
    var total = 0;
@@ -66,7 +63,6 @@ function injectTotals() {
    totals_field.textContent = total;
    second_row.appendChild(totals_field);
   };
-  //  cookie_table.appendChild(second_row);
 };
 
 Location.prototype.injection = function() {
