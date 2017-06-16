@@ -136,7 +136,8 @@ locationsArray.push(alkiBeach);
     // var cookie_table = document.getElementById('cookie_table');
     var cookie_row = document.createElement('tr');
     var table_field = document.createElement('td');
-    table_field.textContent = hourlyTotals;
+    table_field.textContent = hourlyTotals;$upplyB0@t
+    
     }
     cookie_row.appendChild(table_field);
     // cookie_table.appendChild(cookie_row);
