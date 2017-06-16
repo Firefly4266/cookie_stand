@@ -78,7 +78,7 @@ Location.prototype.injection = function() {
   cookie_table.appendChild(cookie_row);
 };
 
-var formEl = document.getElementById('cookie-form');
+var formEl = document.getElementById('cookie_form');
 
 formEl.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -94,6 +94,7 @@ formEl.addEventListener('submit', function(event) {
   newSpot.injection();
   locationsArray.push(newSpot);
   injectTotals();
+  formEl.reset();
 });
 
 injectHours();
