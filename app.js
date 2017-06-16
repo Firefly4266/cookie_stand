@@ -2,7 +2,7 @@
 
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-var locationsArray = [];
+var locations = [];
 
 function Location(name, minCustomers, maxCustomers, avgCookies, totalCookies) {
   this.name = name,
@@ -18,7 +18,6 @@ Location.prototype.cookies = function() {
     var amount = Math.round(Math.ceil(Math.random() * ((this.maxCustomers - this.minCustomers)) + this.minCustomers) * this.avgCookies);
     this.cookieArray.push(amount);
   }
-  console.log(amount);
   return amount;
 };
 
@@ -29,7 +28,6 @@ Location.prototype.totals = function(){
   }
     this.cookieArray.push(total);
     this.totalCookies = total;
-    console.log(total);
     return total;  
 };
 
@@ -50,12 +48,12 @@ function injectHours(){
 };
 
 function injectTotals() {
-  var cookie_table = document.getElementById(cookie_table);
+  var cookie_table = document.getElementById('cookie_table');
   var second_row = document.createElement('tr');
   for (var i = 0; i < table_hours.length; i++) {
    var total = 0;
-   for(var j = 0; j < locationsArray; j++) {
-    total += locationsArray[j].cookieArray[i]
+   for(var j = 0; j < locations; j++) {
+    total += locations[j].cookieArray[i]
    }
    var totals_field = document.createElement('td');
    totals_field.textContent = total;
@@ -78,60 +76,61 @@ Location.prototype.injection = function() {
   cookie_table.appendChild(cookie_row);
 };
 
-var formEl = document.getElementById('cookie-form');
+var formEl = document.getElementById('cookie_form');
 
-formEl.addEventListener('submit', function(event) {
+formEl.addEventListener('submit', handler);
+function handler(event) {
   event.preventDefault();
   event.stopPropagation();
-  var new_spot = event.target.name.value;
-  var min = event.target.min.value;
-  var max = event.target.max.value;
-  var average = event.target.avgCookies.value;
-  var newSpot = new Location(new_spot, min, max, average);
-  console.log(newSpot);
-  newSpot.cookies();
-  newSpot.totals();
-  newSpot.injection();
-  locationsArray.push(newSpot);
-  injectTotals();
-});
+//   if (locations.includes(event.target.name.value)) {
+//     alert('This Name/Location is already taken, please chose another.');
+//   }else{
+    var new_spot = event.target.name.value;
+    var min = parseInt(event.target.min.value);
+    var max = parseInt(event.target.max.value);
+    var average = parseInt(event.target.avgCookies.value);
+    var newSpot = new Location(new_spot, min, max, average);
+    newSpot.cookies();
+    newSpot.totals();
+    newSpot.injection();
+    locations.push(newSpot);
+    injectTotals();
+  // }
+};
+
+injectTotals();
 
 injectHours();
 
 var firstAndPike = new Location('1st and Pike', 23,65,6.3);
-console.log(firstAndPike);
 firstAndPike.cookies();
 firstAndPike.totals();
 firstAndPike.injection();
-locationsArray.push(firstAndPike);
+locations.push(firstAndPike);
 
 var seaTacAirport = new Location('seaTacAirport',3,24,1.2);
-console.log(seaTacAirport);
 seaTacAirport.cookies();
 seaTacAirport.totals();
 seaTacAirport.injection();
-locationsArray.push(seaTacAirport);
+locations.push(seaTacAirport);
   
 var seattleCenter = new Location('seattleCenter',11,38,3.7);
-console.log(seattleCenter);
 seattleCenter.cookies();
 seattleCenter.totals();
 seattleCenter.injection();
-locationsArray.push(seattleCenter);
+locations.push(seattleCenter);
 
 var capitolHill = new Location('capitolHill',20,38,2.3);
-console.log(capitolHill);
 capitolHill.cookies();
 capitolHill.totals();
 capitolHill.injection();
-locationsArray.push(capitolHill);
+locations.push(capitolHill);
 
 var alkiBeach = new Location('alkiBeach',2,16,4.6);
-console.log(alkiBeach);
 alkiBeach.cookies();
 alkiBeach.totals();
 alkiBeach.injection();
-locationsArray.push(alkiBeach);
+locations.push(alkiBeach);
 
 
 
