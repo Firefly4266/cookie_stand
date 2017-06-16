@@ -54,10 +54,12 @@ function injectHours(){
 
 Location.prototype.injection = function() {
   var cookie_table = document.getElementById('cookie_table');
+  var cookie_head = document.createElement('thead');
   var cookie_row = document.createElement('tr');
   var header_row = document.createElement('th');
   header_row.textContent = this.name;
   cookie_row.appendChild(header_row);
+  cookie_head.appendChild(cookie_row);
 
   for(var i = 0; i < this.cookieArray.length; i++){
     var table_field = document.createElement('td');
@@ -88,40 +90,31 @@ formEl.addEventListener('submit', function(event) {
 
 injectHours();
 
+Location.prototype.methods = function() {
+  this.cookies();
+  this.totals();
+  this.injection();
+  locationsArray.push(this);
+}
+
 var firstAndPike = new Location('1st and Pike', 23,65,6.3);
-firstAndPike.cookies();
-firstAndPike.totals();
-firstAndPike.injection();
-locationsArray.push(firstAndPike);
+firstAndPike.methods();
 
 var seaTacAirport = new Location('Sea Tac Airport',3,24,1.2);
-seaTacAirport.cookies();
-seaTacAirport.totals();
-seaTacAirport.injection();
-locationsArray.push(seaTacAirport);
+seaTacAirport.methods();
   
 var seattleCenter = new Location('Seattle Center',11,38,3.7);
-seattleCenter.cookies();
-seattleCenter.totals();
-seattleCenter.injection();
-locationsArray.push(seattleCenter);
+seattleCenter.methods();
 
 var capitolHill = new Location('Capitol Hill',20,38,2.3);
-capitolHill.cookies();
-capitolHill.totals();
-capitolHill.injection();
-locationsArray.push(capitolHill);
+capitolHill.methods();
 
 var alkiBeach = new Location('Alki Beach',2,16,4.6);
-alkiBeach.cookies();
-alkiBeach.totals();
-alkiBeach.injection();
-locationsArray.push(alkiBeach);
-
-
+alkiBeach.methods();
 
 // function hourly_talley(){
   var cookie_table = document.getElementById('cookie_table');
+  var cookie_footer = document.createElement('tfoot');
   var cookie_row = document.createElement('tr');
   var header_row = document.createElement('th');
   header_row.textContent = 'Hourly Totals';
@@ -136,7 +129,7 @@ locationsArray.push(alkiBeach);
     // var cookie_table = document.getElementById('cookie_table');
     var cookie_row = document.createElement('tr');
     var table_field = document.createElement('td');
-    table_field.textContent = hourlyTotals;$upplyB0@t
+    table_field.textContent = hourlyTotals;
     
     }
     cookie_row.appendChild(table_field);
