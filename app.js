@@ -48,25 +48,34 @@ function injectHours(){
 };
 
 // function injectTotals() {
-//   var cookie_table = document.getElementById('cookie_table');
-//   var second_row = document.createElement('tr');
-//   var totals_field = document.createElement('td');
-//   totals_field.textContent = 'Hourly Totals';
-//   second_row.appendChild(totals_field);
-//   var footerTotal = 0;
-//   for (var i = 0; i < table_hours.length; i++) {
-//     var hourlyTotals = 0;
-//     for (var j = 0; j < locationsArray.length; j++) {
+
+
+
+  var cookie_table = document.getElementById('cookie_table');
+  var cookie_row = document.createElement('tr');
+  var header_row = document.createElement('th');
+  header_row.textContent = 'Hourly Totals';
+  cookie_row.appendChild(header_row);
+  cookie_table.appendChild(cookie_row);
+
+// function hourly_talley(){
+  var total = 0;
+  for (var i = 0; i < table_hours.length - 2; i++) {
+    var hourlyTotals = 0;
+    for (var j = 0; j < locationsArray.length; j++) {
+      console.log(locationsArray[i].cookieArray[j]);
 //       var current = locationsArray[j];
 //       hourlyTotals += current.table_hours[i];
 //       console.log(hourlyTotals);
-//     }
-//     footerTotal += hourlyTotals;
-//     console.log(footerTotal);
-//    }
-//   // console.log(total);
+    }
+    console.log(locationsArray[j].cookieArray[i]);
+//     total += hourlyTotals;
+//     console.log(total);
+   }
+// }
+  // console.log(total);
 // };
-
+// hourly_talley();
 
 // function injectTotals() {
 //   var cookie_table = document.getElementById(cookie_table);
